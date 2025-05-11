@@ -49,6 +49,18 @@ This project is a Selenium-based TestNG automation suite that performs various a
 
 ---
 
+## ⚠️ Challenges Faced
+
+### 1. **Dynamic Page Content**
+- YouTube content loads asynchronously via JavaScript, which often results in **StaleElementReferenceException**.
+- **Solution**: Used `WebDriverWait` with `ExpectedConditions.presenceOfElementLocated` or refreshed DOM references dynamically.
+
+### 2. **Lazy Loading & Infinite Scroll**
+- Sections like Music and Search require scrolling to load new content.
+- **Solution**: Implemented **JavaScript scroll-based pagination**, checked element visibility via `isDisplayed()`.
+
+---
+
 ## 🔧 Utilities and Best Practices
 
 - ✅ Using **Wrapper class** for all UI actions (Click, Scroll, Wait, Get Text).
